@@ -70,7 +70,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.black,
         appBar: AppBar(
           title: Text("\$ Conversor \$"),
           backgroundColor: Colors.amber,
@@ -109,13 +109,13 @@ class _HomeState extends State<Home> {
                           Icon(Icons.monetization_on,
                               size: 150.0, color: Colors.amber),
                           buildTextField(
-                              "Reais", "R\$", realController, _realChanged),
+                              "Reais", "R\$ ", realController, _realChanged),
                           Divider(),
-                          buildTextField("Dólares", "US\$", dolarController,
+                          buildTextField("Dólares", "US\$ ", dolarController,
                               _dolarChanged),
                           Divider(),
                           buildTextField(
-                              "Euros", "€", euroController, _euroChanged),
+                              "Euros", "€ ", euroController, _euroChanged),
                         ],
                       ),
                     );
@@ -133,6 +133,12 @@ Widget buildTextField(
         labelText: label,
         labelStyle: TextStyle(color: Colors.amber),
         border: OutlineInputBorder(),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: Colors.amber,
+            width: 2.0,
+          ),
+        ),
         prefixText: prefix),
     style: TextStyle(color: Colors.amber, fontSize: 25.0),
     onChanged: f,
